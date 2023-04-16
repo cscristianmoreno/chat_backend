@@ -16,8 +16,8 @@ const server: http.Server = app.listen(PORT, () => {
     console.log("Corriendo en el puerto " + PORT);
 });
 
-
 new SocketController(server);
+
 app.use(express.json({limit: "10mb"}));
 app.use(express.urlencoded({limit: "10mb"}));
 app.use(cors());
