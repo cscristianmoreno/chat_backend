@@ -12,7 +12,7 @@ const app = express();
 const PORT = 4000;
     
 const server: http.Server = app.listen(PORT, () => {
-    // new DatabaseService().initialize();
+    new DatabaseService().initialize();
     console.log("Corriendo en el puerto " + PORT);
 });
 

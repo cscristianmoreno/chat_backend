@@ -1,4 +1,4 @@
-import { contactStruct, userRegisterStruct } from "../interface/Interface";
+import { userRegisterStruct } from "../interface/Interface";
 
 export const USERS: userRegisterStruct[] = [
     { 
@@ -39,7 +39,7 @@ export const USERS: userRegisterStruct[] = [
         password: "marcos_ibaceta",
         name: "Marcos Ibaceta", 
         lastname: "Montenegro",
-        photo: "photo4.jpg", 
+        photo: "photo5.jpg", 
     },
     { 
         id: 6,
@@ -47,34 +47,38 @@ export const USERS: userRegisterStruct[] = [
         password: "oscar_ruedas",
         name: "Oscar Ruedas", 
         lastname: "Montenegro",
-        photo: "photo4.jpg", 
-    },
-];
-
-
-export const CONTACTS: contactStruct[] = [
-    { 
-        id: 1,
-        contactOf: 1,
-        name: "Oscar Fernandez", 
-        photo: "photo.jpg", 
+        photo: "photo6.jpg", 
     },
     { 
-        id: 2,
-        contactOf: 1,
-        name: "Camila Herrera", 
-        photo: "photo2.jpg", 
+        id: 7,
+        email: "milagros_reyes@mailtest.com",
+        password: "milagros_reyes",
+        name: "Milagros", 
+        lastname: "Reyes",
+        photo: "photo7.jpg", 
     },
     { 
-        id: 3,
-        contactOf: 5,
-        name: "Romina Perez", 
-        photo: "photo3.jpg", 
+        id: 8,
+        email: "agustina_medina@mailtest.com",
+        password: "agustina_medina",
+        name: "Agustina", 
+        lastname: "Medina",
+        photo: "photo8.jpg", 
     },
     { 
-        id: 4,
-        contactOf: 1,
-        name: "Carlos Montenegro", 
-        photo: "photo4.jpg", 
+        id: 9,
+        email: "lorena_ruiz@mailtest.com",
+        password: "lorena_ruiz",
+        name: "Lorena", 
+        lastname: "Ruiz",
+        photo: "photo9.jpg", 
+    },
+    { 
+        id: 10,
+        email: "francisco_avila@mailtest.com",
+        password: "francisco_avila",
+        name: "Francisco", 
+        lastname: "Ávila",
+        photo: "photo10.jpg", 
     },
 ];

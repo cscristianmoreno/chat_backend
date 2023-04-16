@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 
 import fs from "fs/promises";
 import { initializeDatabase, queryStruct } from "../interface/Interface";
-import { CONTACTS, USERS } from "./users";
+import { USERS } from "./users";
 import { Tables } from "./tables";
 
 class DatabaseService implements initializeDatabase {
@@ -28,16 +28,6 @@ class DatabaseService implements initializeDatabase {
                     str.name,
                     str.lastname,
                     "data:image/jpeg;base64," + img64
-                ]
-            });
-        });
-
-        CONTACTS.forEach(async (str) => {
-            await new DatabaseService().prepareQuery({ 
-                query: "INSERT INTO contacts (contactId, contactOf) VALUES (?, ?)",
-                values: [
-                    str.id,
-                    str.contactOf
                 ]
             });
         });
