@@ -3,6 +3,6 @@ import { STATUS_UNAUTHORIZE } from "../http/codes";
 
 export class ErrorController {
     static error(err: Error, req: Request, res: Response, next: NextFunction) {
-        return res.status(STATUS_UNAUTHORIZE).send("No authorizado papi");
+        return res.status(500).send("No authorizado papi");
     }
 }
