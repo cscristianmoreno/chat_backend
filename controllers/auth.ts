@@ -42,7 +42,7 @@ export class AuthController {
     }
 
     static checkAuth(req: Request, res: Response) {
-        res.status(STATUS_OK).send("Llegó acá");
+        res.status(STATUS_OK).end();
     }
 
     static async userLogin(req: Request, res: Response, next: NextFunction) {
