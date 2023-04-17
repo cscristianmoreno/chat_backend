@@ -7,6 +7,7 @@ import { SocketController } from "./controllers/sockets";
 import { ErrorController } from "./controllers/error";
 import { UserController } from "./controllers/user";
 import DatabaseService from "./db/db";
+import path from "path";
 
 const app = express();
 const PORT = 4000;
@@ -14,11 +15,10 @@ const PORT = 4000;
 app.use(express.json({limit: "10mb"}));
 app.use(express.urlencoded({limit: "10mb"}));
 app.use(cors());
-app.use(express.static("db"));
-app.use(express.static("assets"));
+app.use(express.static(path.join(__dirname)));
     
 const server: http.Server = app.listen(PORT, () => {
-    new DatabaseService().initialize();
+    // new DatabaseService().initialize();
     console.log("Corriendo en el puerto " + PORT);
 });
 
