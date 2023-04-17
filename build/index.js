@@ -9,13 +9,11 @@ const auth_1 = require("./controllers/auth");
 const sockets_1 = require("./controllers/sockets");
 const error_1 = require("./controllers/error");
 const user_1 = require("./controllers/user");
-const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 const PORT = 4000;
 app.use(express_1.default.json({ limit: "10mb" }));
 app.use(express_1.default.urlencoded({ limit: "10mb" }));
 app.use((0, cors_1.default)());
-app.use(express_1.default.static(path_1.default.join(__dirname)));
 const server = app.listen(PORT, () => {
     // new DatabaseService().initialize();
     console.log("Corriendo en el puerto " + PORT);

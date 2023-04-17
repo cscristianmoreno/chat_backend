@@ -18,6 +18,7 @@ const bcrypt_1 = __importDefault(require("bcrypt"));
 const promises_1 = __importDefault(require("fs/promises"));
 const users_1 = require("./users");
 const tables_1 = require("./tables");
+const path_1 = __importDefault(require("path"));
 class DatabaseService {
     initialize() {
         return __awaiter(this, void 0, void 0, function* () {
@@ -29,7 +30,7 @@ class DatabaseService {
     insertData() {
         return __awaiter(this, void 0, void 0, function* () {
             users_1.USERS.forEach((str) => __awaiter(this, void 0, void 0, function* () {
-                const img64 = yield promises_1.default.readFile("assets/images/" + str.photo, "base64");
+                const img64 = yield promises_1.default.readFile(path_1.default.join("assets/images/" + str.photo, "base64"));
                 const pw = yield bcrypt_1.default.hash(str.password, 13);
                 yield new DatabaseService().prepareQuery({
                     query: "INSERT INTO users (email, password, name, lastname, photo) VALUES (?, ?, ?, ?, ?)",
@@ -66,7 +67,7 @@ class DatabaseService {
     getDatabase() {
         return __awaiter(this, void 0, void 0, function* () {
             const db = yield (0, sqlite_1.open)({
-                filename: "db/database.db",
+                filename: path_1.default.join(__dirname, "db/database.db"),
                 driver: sqlite3_1.default.Database
             });
             return db;

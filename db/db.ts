@@ -6,6 +6,7 @@ import fs from "fs/promises";
 import { initializeDatabase, queryStruct } from "../interface/Interface";
 import { USERS } from "./users";
 import { Tables } from "./tables";
+import path from "path";
 
 class DatabaseService implements initializeDatabase {
     async initialize() {
@@ -16,7 +17,7 @@ class DatabaseService implements initializeDatabase {
 
     async insertData() {
         USERS.forEach(async (str) => {
-            const img64 = await fs.readFile("assets/images/" + str.photo, "base64");
+            const img64 = await fs.readFile(path.join("assets/images/" + str.photo, "base64"));
 
             const pw = await bcrypt.hash(str.password, 13);
 
@@ -56,7 +57,7 @@ class DatabaseService implements initializeDatabase {
 
     async getDatabase() {
         const db = await open({
-            filename: "db/database.db",
+            filename: path.join(__dirname, "db/database.db"),
             driver: sqlite3.Database
         });
 
