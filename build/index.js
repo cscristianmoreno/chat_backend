@@ -12,14 +12,14 @@ const user_1 = require("./controllers/user");
 const db_1 = __importDefault(require("./db/db"));
 const app = (0, express_1.default)();
 const PORT = 4000;
+app.use(express_1.default.json({ limit: "10mb" }));
+app.use(express_1.default.urlencoded({ limit: "10mb" }));
+app.use((0, cors_1.default)());
 const server = app.listen(PORT, () => {
     new db_1.default().initialize();
     console.log("Corriendo en el puerto " + PORT);
 });
 new sockets_1.SocketController(server);
-app.use(express_1.default.json({ limit: "10mb" }));
-app.use(express_1.default.urlencoded({ limit: "10mb" }));
-app.use((0, cors_1.default)());
 app.post("/login", auth_1.AuthController.userLogin);
 app.post("/register", auth_1.AuthController.userRegister);
 app.use(auth_1.AuthController.authorization);

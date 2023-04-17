@@ -10,6 +10,10 @@ import DatabaseService from "./db/db";
 
 const app = express();
 const PORT = 4000;
+
+app.use(express.json({limit: "10mb"}));
+app.use(express.urlencoded({limit: "10mb"}));
+app.use(cors());
     
 const server: http.Server = app.listen(PORT, () => {
     new DatabaseService().initialize();
@@ -17,10 +21,6 @@ const server: http.Server = app.listen(PORT, () => {
 });
 
 new SocketController(server);
-
-app.use(express.json({limit: "10mb"}));
-app.use(express.urlencoded({limit: "10mb"}));
-app.use(cors());
 
 app.post("/login", AuthController.userLogin);
 app.post("/register", AuthController.userRegister);
