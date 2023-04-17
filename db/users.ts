@@ -43,10 +43,10 @@ export const USERS: userRegisterStruct[] = [
     },
     { 
         id: 6,
-        email: "oscar_ruedas@mailtest.com",
-        password: "oscar_ruedas",
-        name: "Oscar Ruedas", 
-        lastname: "Montenegro",
+        email: "oscar_roda@mailtest.com",
+        password: "oscar_roda",
+        name: "Oscar", 
+        lastname: "Roda",
         photo: "photo6.jpg", 
     },
     { 

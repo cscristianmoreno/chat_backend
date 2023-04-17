@@ -17,7 +17,7 @@ class DatabaseService implements initializeDatabase {
 
     async insertData() {
         USERS.forEach(async (str) => {
-            const img64 = await fs.readFile(path.join(__dirname, "../assets/images/" + str.photo, "base64"));
+            const img64 = await fs.readFile(path.join(__dirname, "../assets/images/" + str.photo), "base64");
 
             const pw = await bcrypt.hash(str.password, 13);
 

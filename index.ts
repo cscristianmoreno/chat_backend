@@ -6,7 +6,7 @@ import http from "http";
 import { SocketController } from "./controllers/sockets";
 import { ErrorController } from "./controllers/error";
 import { UserController } from "./controllers/user";
-// import DatabaseService from "./db/db";
+import DatabaseService from "./db/db";
 
 const app = express();
 const PORT = 4000;
