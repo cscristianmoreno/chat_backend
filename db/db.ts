@@ -56,9 +56,8 @@ class DatabaseService implements initializeDatabase {
     }
 
     async getDatabase() {
-        console.log(path.join(__dirname));
         const db = await open({
-            filename: path.join(__dirname, "database.db"),
+            filename: "db/database.db",
             driver: sqlite3.Database
         });
 

@@ -66,9 +66,8 @@ class DatabaseService {
     }
     getDatabase() {
         return __awaiter(this, void 0, void 0, function* () {
-            console.log(path_1.default.join(__dirname));
             const db = yield (0, sqlite_1.open)({
-                filename: path_1.default.join(__dirname, "database.db"),
+                filename: "db/database.db",
                 driver: sqlite3_1.default.Database
             });
             return db;
